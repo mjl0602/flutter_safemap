@@ -29,7 +29,7 @@ test('get value from safemap', () {
 
     // 错误的下标也会返回SafeMap(null)
     assert(safeMap['tag'].value == 'student');
-    assert(safeMap['tag12345'].value == 'student');
+    assert(safeMap['tag12345'].value == null);
 
     // 连续取值,可以一直安全取值,只会返回SafeMap(null).
     assert(safeMap['info']['name'].value == 'Jerry');
