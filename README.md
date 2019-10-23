@@ -4,11 +4,32 @@ Safely get value with Type from JSON map. Will return null value when value was 
 
 ## Getting Started
 
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
-
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+```dart
+test('get value from safemap', () {
+    // source map
+    Map map = {
+      'id': 3,
+      'tag': 'student',
+      'info': {
+        'name': 'Jerry',
+      },
+      'class': [
+        {
+          "name": 'class 1',
+          'tag': '',
+        },
+        {},
+      ],
+    };
+    SafeMap safeMap = SafeMap(map);
+    assert(safeMap['id'].value == 3);
+    assert(safeMap['id'].string == null);
+    assert(safeMap['tag'].value == 'student');
+    assert(safeMap['info']['name'].value == 'Jerry');
+    assert(safeMap['class'].list.length == 2);
+    assert(safeMap['class'][0]['name'].value == 'class 1');
+    assert(safeMap['class'][0]['tag'].isEmpty());
+    assert(safeMap['class'][1].isEmpty());
+    assert(safeMap['class'][2].isEmpty());
+  });
+```
