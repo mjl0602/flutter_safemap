@@ -4,10 +4,10 @@ Safely get value with Type from JSON map. Will return `null` value when value wa
 
 
 # Feature
-- [x] 可以从Map中连续使用`[]`操作符取值，任何错误取值都会返回`null`而不会报错。
-- [x] 即使对Value为null的SafeMap使用`[]`操作符，也只会返回一个新的`SafeMap(null)`对象
-- [x] 支持直接取出对应类型的数据，任何错误取值都会返回null而不会报错。
-- [x] 通过调用`isEmpty()`方法，空数组，空字典，空字符串或0都会返回true，帮助你快速判断空值。
+- [x] **安全取值**：可以从Map中连续使用`[]`操作符取值，任何错误取值都会返回`null`而不会报错。
+- [x] **安全的嵌套Map**：你可以轻松取出深度嵌套Map中的数据，因为即使对Value为`null`的SafeMap使用`[]`操作符，也只会返回一个新的`SafeMap(null)`对象。
+- [x] **按类型取值**：支持直接取出期望类型的数据，类型不正确就会返回`null`而不会报错。
+- [x] **类似Js的空值判断**：通过调用`isEmpty()`方法，空数组，空字典，空字符串或0都会返回true，帮助你快速判断空值。
 
 ## Getting Started
 
