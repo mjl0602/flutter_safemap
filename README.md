@@ -1,6 +1,13 @@
 # safemap
 
-Safely get value with Type from JSON map. Will return null value when value was wrong.
+Safely get value with Type from JSON map. Will return `null` value when value was wrong.
+
+
+# Feature
+- [x] 可以从Map中连续使用`[]`操作符取值，任何错误取值都会返回`null`而不会报错。
+- [x] 即使对Value为null的SafeMap使用`[]`操作符，也只会返回一个新的`SafeMap(null)`对象
+- [x] 支持直接取出对应类型的数据，任何错误取值都会返回null而不会报错。
+- [x] 通过调用`isEmpty()`方法，空数组，空字典，空字符串或0都会返回true，帮助你快速判断空值。
 
 ## Getting Started
 
