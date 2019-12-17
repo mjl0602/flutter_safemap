@@ -18,8 +18,8 @@ class SafeMap {
   dynamic get v => value;
   String get string => value is String ? value as String : null;
   num get number => value is num ? value as num : null;
-  num get intValue => number?.toInt();
-  num get doubleValue => number?.toDouble();
+  int get intValue => number?.toInt();
+  double get doubleValue => number?.toDouble();
   Map get map => value is Map ? value as Map : null;
   List get list => value is List ? value as List : null;
   bool get boolean => value is bool ? value as bool : false;
