@@ -1,5 +1,9 @@
 import 'dart:core';
 
+extension Safe on Map {
+  SafeMap get safe => SafeMap(this);
+}
+
 class SafeMap {
   SafeMap(this.value);
 

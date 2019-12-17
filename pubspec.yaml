@@ -5,7 +5,7 @@ author: mjl0602<675531696@qq.com>
 homepage: https://github.com/mjl0602
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: ">=2.6.0 <3.0.0"
 
 dependencies:
 
