@@ -1,6 +1,10 @@
 import 'dart:core';
 
-extension Safe on Map {
+extension SafeMapExt on Map {
+  SafeMap get safe => SafeMap(this);
+}
+
+extension SafeListExt on List {
   SafeMap get safe => SafeMap(this);
 }
 
