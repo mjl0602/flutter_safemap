@@ -1,9 +1,5 @@
 import 'dart:core';
 
-extension Safe on Map {
-  SafeMap get safe => SafeMap(this);
-}
-
 class SafeMap {
   SafeMap(this.value);
 
@@ -14,7 +10,7 @@ class SafeMap {
     if (value is List) {
       List _list = value;
       int max = _list.length - 1;
-      if (key is int && key < max) return SafeMap(value[key]);
+      if (key is int && key <= max) return SafeMap(value[key]);
     }
     return SafeMap(null);
   }
