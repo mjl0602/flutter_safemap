@@ -1,3 +1,8 @@
+## [1.2.2].
+
+* Add toInt getter to transfer String to int.
+* Add toDouble getter to transfer String to double.
+
 ## [1.2.1].
 
 * Fix list bug.

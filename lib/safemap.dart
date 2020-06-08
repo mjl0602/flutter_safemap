@@ -24,6 +24,15 @@ class SafeMap {
   List get list => value is List ? value as List : null;
   bool get boolean => value is bool ? value as bool : false;
 
+  int get toInt {
+    return this.intValue ?? (string == null ? null : int.tryParse(string));
+  }
+
+  double get toDouble {
+    return this.doubleValue ??
+        (string == null ? null : double.tryParse(string));
+  }
+
   bool isEmpty() {
     if (this.v == null) return true;
     if (this.string == '') return true;

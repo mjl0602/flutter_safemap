@@ -1,6 +1,6 @@
 name: safemap
 description: Safely get value with Type from JSON map. Will return null value when value was wrong.
-version: 1.2.1
+version: 1.2.2
 author: mjl0602<675531696@qq.com>
 homepage: https://github.com/mjl0602
 
@@ -9,16 +9,15 @@ environment:
 
 dependencies:
 
-
 dev_dependencies:
-
+  flutter_test:
+    sdk: flutter
 # flutter packages pub publish --server=https://pub.dartlang.org
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
 # The following section is specific to Flutter.
 flutter:
-
   # To add assets to your package, add an assets section, like this:
   # assets:
   #  - images/a_dot_burr.jpeg
@@ -29,7 +28,6 @@ flutter:
   #
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
-
   # To add custom fonts to your package, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a
   # "family" key with the font family name, and a "fonts" key with a
