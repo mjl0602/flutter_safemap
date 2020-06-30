@@ -24,12 +24,21 @@ class SafeMap {
   List get list => value is List ? value as List : null;
   bool get boolean => value is bool ? value as bool : false;
 
+  num get toNum {
+    return this.number ?? (string == null ? null : num.tryParse(string));
+  }
+
+  ///   "1.0" => null
+  ///   122.0 => 122
+  ///   "122" => 122
+  ///   12232 => 12232
   int get toInt {
     return this.intValue ?? (string == null ? null : int.tryParse(string));
   }
 
   double get toDouble {
     return this.doubleValue ??
+        this.intValue?.toDouble() ??
         (string == null ? null : double.tryParse(string));
   }
 

@@ -1,6 +1,6 @@
 name: safemap
 description: Safely get value with Type from JSON map. Will return null value when value was wrong.
-version: 1.2.2
+version: 1.2.3
 author: mjl0602<675531696@qq.com>
 homepage: https://github.com/mjl0602
 

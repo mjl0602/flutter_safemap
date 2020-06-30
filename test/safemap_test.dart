@@ -49,7 +49,9 @@ void main() {
     // 转换String为int
     assert(safeMap['id'].toInt == 3);
     assert(safeMap['code'].toInt == 3);
+    assert(safeMap['code'].toDouble is double);// 3 => 3.0
     assert(safeMap['point'].toDouble == 3.1);
     assert(safeMap['point'].toInt == null);
+    assert(safeMap['point'].toNum is double);
   });
 }
