@@ -1,3 +1,7 @@
+## [1.2.3].
+
+* toDouble getter can auto transfer int to double now(but not return null value).
+
 ## [1.2.2].
 
 * Add toInt getter to transfer String to int.

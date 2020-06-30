@@ -46,6 +46,7 @@ void main() {
     // 越界也会返回SafeMap(null)，判断isEmpty为true
     assert(safeMap['class'][2].isEmpty());
 
+
     // 转换String为int
     assert(safeMap['id'].toInt == 3);
     assert(safeMap['code'].toInt == 3);
