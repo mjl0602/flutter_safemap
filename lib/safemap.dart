@@ -30,17 +30,36 @@ class SafeMap {
 
   ///   "1.0" => null
   ///   122.0 => 122
-  ///   "122" => 122
-  ///   12232 => 12232
   int get toInt {
     return this.intValue ?? (string == null ? null : int.tryParse(string));
   }
+
+  int get forceInt => toDouble.toInt();
 
   double get toDouble {
     return this.doubleValue ??
         this.intValue?.toDouble() ??
         (string == null ? null : double.tryParse(string));
   }
+
+  /// DateTime form String value.
+  /// Use [DateTime.tryParse] Function.
+  DateTime get dateTime => DateTime.tryParse(this.string);
+
+  /// DateTime from [this.forceInt * 1000] value
+  DateTime get dateTimeFromSecond => this.forceInt != null
+      ? DateTime.fromMillisecondsSinceEpoch(this.forceInt * 1000)
+      : null;
+
+  /// DateTime from [this.forceInt] value as [millsecond]
+  DateTime get dateTimeFromMillsecond => this.forceInt != null
+      ? DateTime.fromMillisecondsSinceEpoch(this.forceInt)
+      : null;
+
+  /// DateTime from [this.forceInt] value as [microsecond]
+  DateTime get dateTimeFromMicrosecond => this.forceInt != null
+      ? DateTime.fromMicrosecondsSinceEpoch(this.forceInt)
+      : null;
 
   bool isEmpty() {
     if (this.v == null) return true;

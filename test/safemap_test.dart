@@ -46,13 +46,23 @@ void main() {
     // 越界也会返回SafeMap(null)，判断isEmpty为true
     assert(safeMap['class'][2].isEmpty());
 
-
     // 转换String为int
     assert(safeMap['id'].toInt == 3);
     assert(safeMap['code'].toInt == 3);
-    assert(safeMap['code'].toDouble is double);// 3 => 3.0
+    assert(safeMap['code'].toDouble is double); // 3 => 3.0
     assert(safeMap['point'].toDouble == 3.1);
     assert(safeMap['point'].toInt == null);
     assert(safeMap['point'].toNum is double);
+  });
+
+  test('Date Time Test', () {
+    var source = {
+      'deleteAt': '2019-12-01 12:32:42',
+      'createdAt': 'null',
+    };
+    var res = SafeMap(source)['deleteAt'].dateTime;
+    var createdAt = SafeMap(source)['createdAt'].dateTime;
+    assert(res is DateTime);
+    assert(createdAt == null);
   });
 }
