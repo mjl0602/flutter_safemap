@@ -34,7 +34,7 @@ class SafeMap {
     return this.intValue ?? (string == null ? null : int.tryParse(string));
   }
 
-  int get forceInt => toDouble.toInt();
+  int get forceInt => toDouble?.toInt();
 
   double get toDouble {
     return this.doubleValue ??
