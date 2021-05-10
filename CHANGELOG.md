@@ -1,3 +1,6 @@
+## [2.0.0-nullsafety.0].
+
+* Add nullsafety
 ## [1.2.3].
 
 * toDouble getter can auto transfer int to double now(but not return null value).

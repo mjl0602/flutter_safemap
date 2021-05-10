@@ -36,7 +36,7 @@ void main() {
     assert(safeMap['a']['b']['b']['b']['b']['b'].value == null);
 
     // 取出数组，也可以通过数组下标继续取值
-    assert(safeMap['class'].list.length == 2);
+    assert(safeMap['class'].list!.length == 2);
     assert(safeMap['class'][0]['name'].value == 'class 1');
 
     // {},[],0,'',null 都会被判断为空
@@ -60,7 +60,7 @@ void main() {
       'deleteAt': '2019-12-01 12:32:42',
       'createdAt': 'null',
     };
-    var res = SafeMap(source)['deleteAt'].dateTime;
+    var res = SafeMap(source)['deleteAt'].dateTime!;
     var createdAt = SafeMap(source)['createdAt'].dateTime;
     assert(res is DateTime);
     assert(createdAt == null);
