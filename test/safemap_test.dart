@@ -65,4 +65,11 @@ void main() {
     assert(res is DateTime);
     assert(createdAt == null);
   });
+  test('empty test', () {
+    assert(SafeMap({}).isEmpty());
+    assert(SafeMap([]).isEmpty());
+    assert(SafeMap('').isEmpty());
+    assert(SafeMap(0).isEmpty());
+    assert(SafeMap(null).isEmpty());
+  });
 }
