@@ -72,4 +72,10 @@ void main() {
     assert(SafeMap(0).isEmpty());
     assert(SafeMap(null).isEmpty());
   });
+  test('not null value test', () {
+    assert(SafeMap({}).listOrBlank is List);
+    assert(SafeMap([]).mapOrBlank is Map);
+    assert(SafeMap('').intOrZero == 0);
+    assert(SafeMap(null).doubleOrZero == 0);
+  });
 }

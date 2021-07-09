@@ -1,3 +1,11 @@
+## [2.1.0].
+
+* Add intOrZero getter.
+* Add doubleOrZero getter.
+* Add mapOrBlank getter.
+* Add listOrBlank getter.
+* Add hasValue getter.
+* Change boolean getter from bool? to bool.
 ## [2.0.0-nullsafety.0].
 
 * Add nullsafety

@@ -7,11 +7,7 @@ class SafeMap {
 
   SafeMap operator [](dynamic key) {
     if (value is Map) return SafeMap(value[key]);
-    if (value is List) {
-      List _list = value;
-      int max = _list.length - 1;
-      if (key is int && key <= max) return SafeMap(value[key]);
-    }
+    if (value is List) return SafeMap(value.asMap()[key]);
     return SafeMap(null);
   }
 
@@ -20,9 +16,22 @@ class SafeMap {
   num? get number => value is num ? value as num? : null;
   int? get intValue => number?.toInt();
   double? get doubleValue => number?.toDouble();
+
   Map? get map => value is Map ? value as Map? : null;
   List? get list => value is List ? value as List? : null;
-  bool? get boolean => value is bool ? value as bool? : false;
+  bool get boolean => value is bool ? value as bool : false;
+
+  /// int or 0
+  int get intOrZero => intValue ?? 0;
+
+  /// double or 0
+  double get doubleOrZero => doubleValue ?? 0;
+
+  /// Map or {}
+  Map get mapOrBlank => map ?? {};
+
+  /// List or []
+  List get listOrBlank => list ?? [];
 
   num? get toNum {
     return this.number ?? (string == null ? null : num.tryParse(string!));
@@ -70,6 +79,8 @@ class SafeMap {
     if (this.boolean == false) return true;
     return false;
   }
+
+  bool get hasValue => !isEmpty();
 
   @override
   String toString() => '<SafeMap:$value>';
